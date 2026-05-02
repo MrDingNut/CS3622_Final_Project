@@ -6,8 +6,9 @@
 ##############################################
 
 import socket
+import sys
 
-HOST = "127.0.0.1"
+HOST = sys.argv[1] if len(sys.argv) > 1 else "127.0.0.1" # Uses the ip addres specified when running the script. If none is specified, assume the script is being tested locally
 PORT = 65432
 
 # Creates the socket

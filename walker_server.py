@@ -10,7 +10,7 @@ import socket
 def reverse_string(str):
     return str[::-1]
 
-HOST = "127.0.0.1"
+HOST = ""
 PORT = 65432
 
 # Creates the socket
