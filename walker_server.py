@@ -22,9 +22,10 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sock:# Create socket o
         print(f"Connected by {addr}")
         
         while True:
-            data = conn.recv(1024)          # Waits to recieve data from client
-            msg = data.decode               # Decodes message
-            revMsg = reverse_string(msg)    # Reverses message
+            data    = conn.recv(1024)       # Waits to recieve data from client
+            msg     = data.decode()         # Decodes message
+            print(f"Received: {msg}")       # Prints recieved message
+            revMsg  = reverse_string(msg)   # Reverses message
             conn.sendall(revMsg.encode())   # Sends reversed message to client
 
             if msg.casefold() == "end":     # Breaks out of the loop if client sends "end" 
