@@ -18,7 +18,8 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sock:# Create socket o
         msg = input("Enter a message to send to the server (or 'End' to quit): ") # Gets user input
         sock.sendall(msg.encode())          # Encodes and sends message to server
         data = sock.recv(1024)              # Waits to recieve data from server
-        print(f"Received {data.decode()}")  # Decodes and prints message from server
+        echo = data.decode()
+        print(f"Server echoed: {echo}")  # Decodes and prints message from server
         
         # Breaks out of the loop if user inputs "End"
         if msg.casefold() == "end":
